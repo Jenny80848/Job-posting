@@ -4,8 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Job Board</title>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
   <style>
     body { margin:0; font-family:Arial, sans-serif; background:#edebf0; }
+
+    /* ============================
+       TOP NAVIGATION BAR
+    ============================ */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 50px;
+      background: white;
+      position: fixed;
+      top: 0;
+      width: 95%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ff3e70;
+    }
+    .logo span { color: #003399; }
+
+    .nav-center {
+      display: flex;
+      gap: 30px;
+    }
+    .nav-center a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .badge {
+      background: #ff3e70;
+      color: white;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+    .nav-right a {
+      text-decoration: none;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .job-post-btn {
+      background: #003399;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* ============================
+       HERO SECTION
+    ============================ */
     .hero {
       position:relative;
       background:url('image/jobpostingbackgroundpics.jpeg') center/cover no-repeat;
@@ -15,8 +88,11 @@
       justify-content:center;
       text-align:center;
       color:white;
+      margin-top:90px; /* pushes hero below navbar */
     }
+
     .hero h2 { font-size:40px; font-weight:700; margin:0; }
+
     .search-box {
       background:white;
       padding:20px;
@@ -27,12 +103,14 @@
       width:70%;
       margin-top:20px;
     }
+
     .search-box input, .search-box select {
       padding:12px;
       width:100%;
       border:1px solid #ddd;
       border-radius:8px;
     }
+
     .search-box button {
       padding:12px 28px;
       background:#003399;
@@ -42,7 +120,12 @@
       cursor:pointer;
       font-weight:bold;
     }
+
+    /* ============================
+       CATEGORIES SECTION
+    ============================ */
     .section-title { text-align:center; margin:60px 0 10px; font-size:28px; }
+
     .categories {
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -50,6 +133,14 @@
       width:80%;
       margin:auto;
     }
+
+    .category-icon {
+      font-size:40px;
+      color:#003399;
+      margin-bottom:12px;
+      display:block;
+    }
+
     .cat-box {
       background:white;
       padding:30px;
@@ -57,6 +148,7 @@
       text-align:center;
       box-shadow:0 2px 10px rgba(0,0,0,0.05);
     }
+
     .explore-btn {
       display:block;
       margin:40px auto;
@@ -67,6 +159,10 @@
       text-decoration:none;
       width:max-content;
     }
+
+    /* ============================
+       MID BANNER SECTION
+    ============================ */
     .mid-banner {
       background:url('image/jobpostingbackgroundpics.jpeg') center/cover no-repeat;
       padding:70px 0;
@@ -74,7 +170,9 @@
       color:white;
       margin-top:50px;
     }
+
     .mid-banner h2 { font-size:32px; margin-bottom:10px; }
+
     .mid-banner button {
       padding:12px 25px;
       border:none;
@@ -87,38 +185,113 @@
     }
   </style>
 </head>
+
 <body>
-  <header class="hero">
+
+  <!-- ============================
+       NAVIGATION BAR
+  ============================ -->
+  <header class="navbar">
+
+    <div class="nav-left">
+      <h2 class="logo">N<span>o</span>kri</h2>
+    </div>
+
+    <nav class="nav-center">
+      <a href="#">Home</a>
+      <a href="#">Styles</a>
+      <a href="#">
+        Search Jobs <span class="badge">New</span>
+      </a>
+      <a href="#">Users</a>
+      <a href="#">Pages</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#">Login</a>
+      <a href="#">Register</a>
+      <button class="job-post-btn">Job Post</button>
+    </div>
+
+  </header>
+
+  <!-- ============================
+       HERO SECTION
+  ============================ -->
+  <section class="hero">
     <div>
       <h4>A Mega Job Board WordPress Theme</h4>
       <h2>Your Dream Job is Waiting</h2>
+
       <div class="search-box">
         <input type="text" placeholder="Search Job" />
         <select><option>Select Location</option></select>
         <button>Search</button>
       </div>
     </div>
-  </header>
+  </section>
 
+  <!-- ============================
+       CATEGORIES
+  ============================ -->
   <h2 class="section-title">Explore Categories</h2>
+
   <div class="categories">
-    <div class="cat-box">Automotive (1 Opening)</div>
-    <div class="cat-box">Education (1 Opening)</div>
-    <div class="cat-box">Health & Care (1 Opening)</div>
-    <div class="cat-box">Construction (1 Opening)</div>
-    <div class="cat-box">Designer (1 Opening)</div>
-    <div class="cat-box">Fitness Trainer (1 Opening)</div>
-    <div class="cat-box">Marketing (1 Opening)</div>
-    <div class="cat-box">Other Services (1 Opening)</div>
+
+    <div class="cat-box">
+      <i class="bi bi-car-front-fill category-icon"></i>
+      <p>Automotive (1 Opening)</p>
+    </div>
+
+    <div class="cat-box">
+      <i class="bi bi-book-fill category-icon"></i>
+      <p>Education (1 Opening)</p>
+    </div>
+
+    <div class="cat-box">
+      <i class="bi bi-heart-pulse-fill category-icon"></i>
+      <p>Health & Care (1 Opening)</p>
+    </div>
+
+    <div class="cat-box">
+      <i class="bi bi-tools category-icon"></i>
+      <p>Construction (1 Opening)</p>
+    </div>
+
+    <div class="cat-box">
+      <i class="bi bi-palette-fill category-icon"></i>
+      <p>Designer (1 Opening)</p>
+    </div>
+
+    <div class="cat-box">
+      <i class="bi bi-bicycle category-icon"></i>
+      <p>Fitness Trainer (1 Opening)</p>
+    </div>
+
+    <div class="cat-box">
+      <i class="bi bi-bar-chart-fill category-icon"></i>
+      <p>Marketing (1 Opening)</p>
+    </div>
+
+    <div class="cat-box">
+      <i class="bi bi-briefcase-fill category-icon"></i>
+      <p>Other Services (1 Opening)</p>
+    </div>
+
   </div>
 
   <a class="explore-btn" href="#">Explore More</a>
 
+  <!-- ============================
+       MID BANNER
+  ============================ -->
   <section class="mid-banner">
     <h2>Your Dream Jobs Are Waiting</h2>
     <p>Over 1 million interactions, 50,000 success stories</p>
+
     <button>Search Jobs</button>
-    <button style="background-color: #003399; color: white;">Apply Job Now</button>
+    <button style="background-color:#003399;color:white;">Apply Job Now</button>
   </section>
+
 </body>
 </html>
